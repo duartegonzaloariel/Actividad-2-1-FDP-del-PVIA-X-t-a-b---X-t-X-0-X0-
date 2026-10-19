@@ -26,9 +26,7 @@ Enfriamiento de un cuerpo con temperatura inicial incierta:
 | Intervalo temporal | $t \in [0, 20]$ min |
 | Semilla | $2026$ (PCG64, NumPy) |
 
-## Qué hace el código
-
-El script `act2_1fdp.py` compara la 1-FDP obtenida por RVT con tres aproximaciones independientes:
+El notebook `Actividad2.ipynb` compara la 1-FDP obtenida por RVT con tres aproximaciones independientes:
 
 1. **Normalización y momentos:** integra $f_1(x,t)$ y sus dos primeros momentos por cuadratura adaptativa y los compara con $\mu_X(t) = b + (\mu_0 - b)e^{-at}$ y $\sigma_X^2(t) = \sigma_0^2 e^{-2at}$.
 2. **Liouville-Gibbs por características:** integra con Runge-Kutta de orden 4 las ecuaciones $dx/dt = a(b-x)$ y $d(\ln f_1)/dt = a$ desde 2001 puntos iniciales.
@@ -53,13 +51,19 @@ El script `act2_1fdp.py` compara la 1-FDP obtenida por RVT con tres aproximacion
 
 ## Ejecución
 
-Requiere Python 3 con NumPy, SciPy y Matplotlib. Puede ejecutarse localmente o en Google Colab:
+Requiere Python 3 con NumPy, SciPy y Matplotlib. La forma más sencilla es abrir
+`Actividad2.ipynb` en Google Colab y ejecutar todas las celdas
+(*Entorno de ejecución → Ejecutar todas*).
+
+Para ejecutarlo localmente:
 
 ```bash
-pip install numpy scipy matplotlib
-python act2_1fdp.py
+pip install numpy scipy matplotlib notebook
+jupyter notebook Actividad2.ipynb
 ```
 
+El tiempo de ejecución es de aproximadamente un minuto. Las tablas se muestran
+en la salida de las celdas y las figuras se guardan en el directorio de trabajo.
 El tiempo de ejecución es de aproximadamente un minuto. Las tablas se muestran por consola y las figuras se guardan en el directorio de trabajo.
 
 ## Autor
